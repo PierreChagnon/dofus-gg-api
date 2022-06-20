@@ -1,0 +1,186 @@
+select:hover {
+  cursor: pointer;
+}
+
+.stuff {
+  display: grid;
+  grid-template-rows: repeat(5, 80px);
+  grid-template-columns: repeat(6, 80px);
+  grid-gap: 10px;
+  background: #212121;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 10px;
+}
+
+.stuff-block-classe {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+}
+
+.level {
+  text-align: center;
+  font-size: 14px;
+  background: #181818;
+}
+
+.stuff-block-perso {
+  grid-column: 3/5;
+  grid-row: 2/4;
+}
+.stuff-block-perso img {
+  width: 125%;
+  height: 125%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transform: translate(-20px, -35px);
+}
+
+.item {
+  display: flex;
+  background: #181818;
+  border-radius: 5px;
+  background-position: center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  justify-content: flex-end;
+  transition: background-color 0.3s;
+}
+.item:hover {
+  cursor: pointer;
+  background-color: #1818188e;
+}
+
+.delete {
+  display: none;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  background-color: #383838;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+}
+
+.delete-display {
+  display: block;
+}
+
+.has-item:hover {
+  background-color: #5cb8e2;
+}
+
+.stuff-block-1 {
+  grid-column: 1;
+  grid-row: 1;
+  background-image: url("src_assets/items/Amulette_opacity.png");
+}
+
+.stuff-block-2 {
+  grid-column: 1;
+  grid-row: 2;
+  background-image: url("src_assets/items/Anneau_opacity.png");
+}
+
+.stuff-block-3 {
+  grid-column: 1;
+  grid-row: 3;
+  background-image: url("src_assets/items/Anneau_opacity.png");
+}
+
+.stuff-block-4 {
+  grid-column: 1;
+  grid-row: 4;
+  background-image: url("src_assets/items/Bouclier_opacity.png");
+}
+.stuff-block-5 {
+  grid-column: 6;
+  grid-row: 1;
+  background-image: url("src_assets/items/Chapeau_opacity.png");
+}
+
+.stuff-block-6 {
+  grid-column: 6;
+  grid-row: 2;
+  background-image: url("src_assets/items/Cape_opacity.png");
+}
+.stuff-block-7 {
+  grid-column: 6;
+  grid-row: 3;
+  background-image: url("src_assets/items/Ceinture_opacity.png");
+}
+.stuff-block-8 {
+  grid-column: 6;
+  grid-row: 4;
+  background-image: url("src_assets/items/Bottes_opacity.png");
+}
+.stuff-block-9 {
+  grid-column: 3;
+  grid-row: 4;
+  background-image: url("src_assets/items/Armes_opacity.png");
+}
+.stuff-block-10 {
+  grid-column: 4;
+  grid-row: 4;
+  background-image: url("src_assets/items/Familiers_opacity.png");
+}
+
+.dofus {
+  background-image: url("src_assets/items/Dofus_opacity.png");
+}
+.stuff-block-11 {
+  grid-column: 1;
+  grid-row: 5;
+}
+.stuff-block-12 {
+  grid-column: 2;
+  grid-row: 5;
+}
+.stuff-block-13 {
+  grid-column: 3;
+  grid-row: 5;
+}
+.stuff-block-14 {
+  grid-column: 4;
+  grid-row: 5;
+}
+.stuff-block-15 {
+  grid-column: 5;
+  grid-row: 5;
+}
+.stuff-block-16 {
+  grid-column: 6;
+  grid-row: 5;
+}
+
+@media only screen and (max-width: 525px) {
+  .stuff {
+    grid-template-rows: repeat(5, 45px);
+    grid-template-columns: repeat(6, 45px);
+    grid-gap: 5px;
+  }
+  .stuff-block-classe {
+    width: 160px;
+    height: 30px;
+  }
+  .stuff-block-perso img {
+    width: 100%;
+    height: 100%;
+    transform: translate(0px, -10px);
+  }
+  .delete {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    font-size: 10px;
+  }
+}
