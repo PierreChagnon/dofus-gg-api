@@ -1,19 +1,16 @@
-# dofus-gg
-Personal project created in CodeSandbox using React JS.
+# dofus-gg-api
+Personal project built with React JS.
 
 Web app for Dofus players.
-Allowing players to make builds with various items and calculate their personal stats.
+Allowing players to make builds with various items and calculate their stats.
 
 Based on item list database from Dofapi API. Wich retrieves non exhaustive list of items from the game.
 
-Try it on condesandbox : 
 
-https://codesandbox.io/s/github/PierreChagnon/dofus-gg
-#
-Or initialize the project with :
+# Setup
 
 
-### `cd dofus-gg`
+### `cd dofus-gg-api`
 ### `npm install`
 ### `npm start`
 
