@@ -21,6 +21,7 @@ import calculStatsFromSet from "./services/calculStatsFromSet";
 import statNameFilter from "./services/statNameFilter.js";
 
 export default function MonStuff() {
+  const [dropdownShow, setDropdownShow] = useState(false)
   const [dofusBox, setDofusBox] = useState(0); //State pour récupérer la bonne case du dofus sélectionnée
   const [distance, setDistance] = useState(false);
   const [bonusFromSet, setBonusFromSet] = useState(); //ce state nous sert juste à MAJ le DOM (deuxième valeurs de retour de calculStatsFromSet)
@@ -31,7 +32,6 @@ export default function MonStuff() {
   const [level, setLevel] = useState(200);
   const [currentClasse, setCurrentClasse] = useState("Xélor");
   const [modalShow, setModalShow] = useState(false);
-  const [dropdownShow, setDropdownShow] = useState(false);
   const [capital, setCapital] = useState(995);
   const [capitalUsed, setCapitalUsed] = useState(0);
   const [totalStats, setTotalStats] = useState({
@@ -190,7 +190,7 @@ export default function MonStuff() {
     element.style.backgroundImage = `url(${imgUrl})`;
     element.style.backgroundSize = "100%";
 
-    // console.log(stuff);
+    console.log(stuff);
   };
 
   const handleItemClick = (type) => {
@@ -319,18 +319,11 @@ export default function MonStuff() {
   };
 
   const deleteItem = (parentID) => {
-
-    //On enleve l'item du stuff
-    const temp = stuff; 
-    delete temp[parentID]
-    //console.log(temp)
-
+    const temp = delete stuff[parentID]; //On enleve l'item du stuff
     setStuff(temp); // Pour mettre à jour les stats lorsqu'on retire l'item
-    setStatsFromStuff(calculStatsFromStuff(temp, statsFromSet))
-    
     //On récupère la bonne div et on lui remet son image initiale
     const element = document.getElementById(parentID);
-    
+
     //reset les classes pour revenir a la div par défault
     element
       .getElementsByClassName("delete")[0]
@@ -404,7 +397,7 @@ export default function MonStuff() {
             </div>
             <div className="stats hoverable">
               <img src="assets/icon_soin.png" alt="" />
-              {totalStats["Soins"] !== undefined ? totalStats["Soins"] : 0}
+              {totalStats["Soin"] !== undefined ? totalStats["Soin"] : 0}
             </div>
             <div className="stats hoverable">
               <img src="assets/icon_invoc.png" alt="" />
@@ -413,7 +406,7 @@ export default function MonStuff() {
                 : 0}
             </div>
             <div className="stats hoverable">
-              <img src="assets/icon_pui.png" alt="" />
+              <img src="assets/carac/stat_puissance.png" alt="" />
               {totalStats["Puissance"] !== undefined
                 ? totalStats["Puissance"]
                 : 0}
@@ -1003,19 +996,19 @@ export default function MonStuff() {
                 <tr>
                   <th></th>
                   <th>
-                    <img src="assets/fetch_stats_assets/Neutre.png" alt="neutre" />
+                    <img src="assets/carac/stat_neutre.png" alt="neutre" />
                   </th>
                   <th>
-                    <img src="assets/fetch_stats_assets/Force.png" alt="terre" />
+                    <img src="assets/carac/stat_terre.png" alt="terre" />
                   </th>
                   <th>
-                    <img src="assets/fetch_stats_assets/Intelligence.png" alt="feu" />
+                    <img src="assets/carac/stat_feu.png" alt="feu" />
                   </th>
                   <th>
-                    <img src="assets/fetch_stats_assets/Chance.png" alt="chance" />
+                    <img src="assets/carac/stat_chance.png" alt="chance" />
                   </th>
                   <th>
-                    <img src="assets/fetch_stats_assets/Agilité.png" alt="agi" />
+                    <img src="assets/carac/stat_agi.png" alt="agi" />
                   </th>
                 </tr>
               </thead>
